@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Java project to Azure Function App - functionTestJafar
+name: Build and deploy Java project to Azure Function App - FunctionTestJafar
 
 on:
   push:
@@ -10,13 +10,13 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_NAME: functionTestJafar # set this to your function app name on Azure
+  AZURE_FUNCTIONAPP_NAME: FunctionTestJafar # set this to your function app name on Azure
   PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
   JAVA_VERSION: '8' # set this to the java version to use
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
@@ -36,8 +36,8 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'functionTestJafar'
+          app-name: 'FunctionTestJafar'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6EACECA56CDA4438B34FCD58E00DF04D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_857A8605999144478E1C2F55E623ED20 }}
           package: '${{ env.PACKAGE_DIRECTORY }}'
           respect-pom-xml: true
