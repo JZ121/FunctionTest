@@ -38,6 +38,6 @@ jobs:
         with:
           app-name: 'FunctionTestJafar'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_857A8605999144478E1C2F55E623ED20 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_57A1E65C5E1C44CA8353CED3EF6887A5 }}
           package: '${{ env.PACKAGE_DIRECTORY }}'
           respect-pom-xml: true
