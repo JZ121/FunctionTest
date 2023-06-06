@@ -12,11 +12,11 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: func2webapp # set this to your function app name on Azure
   PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
-  JAVA_VERSION: '8' # set this to the java version to use
+  JAVA_VERSION: '17' # set this to the java version to use
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
@@ -38,6 +38,6 @@ jobs:
         with:
           app-name: 'func2webapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_045CE1FA07244505A6C3539BD0148406 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A69B9DF1FD2F418EBAACBDE25CC54AB0 }}
           package: '${{ env.PACKAGE_DIRECTORY }}'
           respect-pom-xml: true
